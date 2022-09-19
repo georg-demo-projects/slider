@@ -1,0 +1,18 @@
+@import "basic/reset";
+@import "../components/main/main";
+
+body {
+    background-color: #292930;
+}
+
+.picture-wrapper {
+    & picture {
+        height: 100%;
+        width: 100%;
+        & img {
+            object-fit: contain;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,153 @@
+.main {
+    position: relative;
+    padding: 50px;
+
+    &__slider.slider-container {
+        margin: 0 auto;
+        width: 800px;
+        height: 500px;
+        background-color: #32323d;
+        box-shadow: 15px 5px 5px 7px #1e1e1e;
+    }
+}
+
+.in-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    & > * {
+        flex: 1 0 0;
+        min-height: 1px;
+    }
+    & > img {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+}
+
+.in-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    & > * {
+        flex: 1 0 0;
+        min-width: 1px;
+    }
+    & > img {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+}
+
+.slide {
+    & > * {
+        padding: 50px;
+    }
+}
+
+.slide > img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.slide-controls {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+}
+
+.slide-dot-container {
+    height: 20px;
+}
+
+.slide-number {
+    position: absolute;
+    bottom: 1rem;
+    left: 50px;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+}
+
+.slide-dot {
+    flex: 1 0 0;
+    position: relative;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    opacity: 0.8;
+    color: #ffffff;
+}
+
+.slide-dot::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "•";
+}
+
+.slide-dot-text {
+    display: none;
+}
+
+.slide-dot:hover {
+    opacity: 1;
+}
+
+.slide-dot--active {
+    transform: scale(1.5);
+}
+
+#btn-next,
+#btn-prev {
+    cursor: pointer;
+    background: transparent;
+    font-size: 30px;
+    border: none;
+    padding: 10px;
+    opacity: 0.8;
+    color: #ffffff;
+}
+
+#btn-next:hover,
+#btn-prev:hover {
+    opacity: 1;
+}
+
+#btn-prev::before {
+    content: "◀︎";
+}
+
+#btn-next::before {
+    content: "▶";
+}
+
+#btn-next .btn-next__text,
+#btn-prev .btn-prev__text {
+    display: none;
+}
+
+#btn-next:focus,
+#btn-prev:focus,
+.slide-dot {
+    outline: none;
+}
